@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Estate MGT</title>
+
+    <!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="District Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+    {% include 'base_files/css.html' %}
+
+</head>
+
+<body>
+	{% include 'base_files/navbar.html' %} 
+    <br>
+	{% if messages %}
+		<div class="container">
+			{% for message in messages %}
+			<div class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %} alert-dismissible fade show" role="alert">
+				<ul class="messages">
+					<li style="text-align: center;">{{ message }}</li>
+				</ul>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			{% endfor %}
+		</div>
+      {% endif %}
+    {% block content %}
+
+    {% endblock content %}
+
+    {% include 'base_files/footer.html' %}
+    {% include 'base_files/js.html' %}
+</body>
+</html>

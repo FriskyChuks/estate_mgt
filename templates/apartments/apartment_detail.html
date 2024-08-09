@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/product_detail.css">
+        
+<div class="container">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+          
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><img src="/static/images/1.jpg" /></div>
+            <div class="tab-pane" id="pic-2"><img src="/static/images/bg3.jpg" /></div>
+            <div class="tab-pane" id="pic-3"><img src="/static/images/bb2.jpg" /></div>
+            <div class="tab-pane" id="pic-4"><img src="/static/images/bg2.jpg" /></div>
+            <div class="tab-pane" id="pic-5"><img src="/static/images/bg.jpg" /></div>
+          </div>
+          <ul class="preview-thumbnail nav nav-tabs">
+            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="/static/images/1.jpg" /></a></li>
+            <li><a data-target="#pic-2" data-toggle="tab"><img src="/static/images/bg3.jpg" /></a></li>
+            <li><a data-target="#pic-3" data-toggle="tab"><img src="/static/images/bb2.jpg" /></a></li>
+            <li><a data-target="#pic-4" data-toggle="tab"><img src="/static/images/bg2.jpg" /></a></li>
+            <li><a data-target="#pic-5" data-toggle="tab"><img src="/static/images/bg.jpg" /></a></li>
+          </ul>
+          
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title">{{apartment.apartment_type.title}}</h3>
+          <div class="rating">
+            <!-- <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div> -->
+            <span style="font-size: x-large;" class="review-no">{{apartment.apartment_category|capfirst}}</span> <br>
+            <span class="review-no">
+              Flat {{apartment.flat_number}}, House {{apartment.compound}}, Phase {{apartment.phase}}, 
+              {{apartment.street|capfirst}} street
+            </span>
+          </div>
+          <p class="product-description">{{apartment.apartment_type.description}}</p>
+          <h4 class="price">current price: <span>{{apartment.price}}</span></h4>
+          <p class="vote"><strong>Lots</strong> of buyers enjoyed this product! <strong>(higly demanded)</strong></p>
+          <h5 class="sizes">Dimension:
+            40 X 60
+            <!-- <span class="size" data-toggle="tooltip" title="small">s</span>
+            <span class="size" data-toggle="tooltip" title="medium">m</span>
+            <span class="size" data-toggle="tooltip" title="large">l</span>
+            <span class="size" data-toggle="tooltip" title="xtra large">xl</span> -->
+          </h5>
+          <h5 class="colors">color:
+            <span class="{{apartment.color}}"></span>
+          </h5>
+          <div class="action">
+            <button class="add-to-cart btn btn-default" type="button">Assign this Now</button>
+            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <br>
+{% endblock content %}
+
